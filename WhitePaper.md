@@ -43,7 +43,7 @@ In this section we will map out the criteria that can be put on (mobile) technol
 - Tracks only whitelisted websites
 - Can be build in less than two month project
 - Easy to maintain, despite evolutions in mobile phone and web technologies
-- Data can be collected over long periods of time
+- Data can be collected over long periods of time (multiple months)
 
 **Legal and GDPR compliant:**
 - No data storage without explicit permission from participant
@@ -146,12 +146,12 @@ Evaluation of all options against criteria:
 | Criteria | VPN | Browser-base | Create own browser, e.g. via Chrome custom tabs | Request data from internet company via webpage (filled in for Google Takeout) | Request data from internet company via email |
 |-----|-----|-----|-----|-----| -----|
 | Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
-| Can track HTTPS urls | Yes? | Yes | Yes | Yes | Yes |
+| Can track HTTPS and HTTP urls | Yes? | Yes | Yes | Yes | Yes |
 | Deals with in-app browsing | Yes | Yes | No |  Yes, if configured | Not applicable |
 | Tracks only whitelisted sites | No | No | No | No | Yes |
 | Can be build in less than two month project | Yes |  Yes | ? | Yes | Yes |
 | Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | ? | Yes | Yes |
-| Data can be collected over long periods of time | Yes | Yes, if participant does not delete their browser history | ? | Yes | Unknown |
+| Data can be collected over long periods of time (multiple months) | Yes | Yes, if participant does not delete their browser history | ? | Yes | Unknown |
 | No data storage without explicit permission from participant | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
 | ... insert extra criteria related to GDPR | ... | ... | ... | ... | ... |
 | Small time investment for (social science) researcher | Yes | Yes | Yes | Yes | Yes |
