@@ -17,8 +17,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[VPN](#vpn) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Browser based](#browser-based) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Create own browser via Chrome custom tabs](#create-own-browser-via-chrome-custom-tabs) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger Google TakeOut](#activity-logger-google-takeout) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger Request via email](#activity-logger-request-via-email) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Request data from internet company via webpage](#request-data-from-internet-company-via-webpage) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Request data from internet company via email](#request-data-from-internet-company-via-email) |
 | [Method comparison](#method-comparison) |
 | [Discussion](#discussion) |
 
@@ -118,7 +118,7 @@ An alternative method is to create a forwarding app that opens Chrome for us [Ma
 | ... | Unclear what this adds relative to Browser based option (above) |
 
 
-### Activity Logger: Google TakeOut
+### Request data from internet company via webpage
 
 We could do a GDPR request by directly downloading data via special webpage (at Google this is [TakeOut](http://takeout.google.com) which gives URL + timestamp + deviceid). I verified that signing into Chrome on mobile and on Desktop (and enabling sync) gives the browser history on Google Takeout. It includes a client_id and a time_usec. In-app browser history is available in full chrome app, but does not sync.
 
@@ -133,7 +133,7 @@ Note that this does not work for all internet companies: facebook / twitter do n
 | ... | Google takeout will not be representative if the participant uses many apps that work with Chrome Custom Tabs, because those traffic will not end up in Google Take out |
 | ... | Google takeout requires that we have similar solutions for Twitter and Facebook, but that does not work if they use their own browser or Chrome custom tab |
 
-### Activity Logger: Request via email
+### Request data from internet company via email
 
 We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the cookies of the users to identify them) ...
 
@@ -141,7 +141,7 @@ We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the coo
 
 Evaluation of all options against criteria:
 
-| Criteria | VPN | Browser-base | Create own browser, e.g. via Chrome custom tabs | Activity Logger: Google Takeout | Activity Logger: Request via email Sanoma/NLprofiel |
+| Criteria | VPN | Browser-base | Create own browser, e.g. via Chrome custom tabs | Request data from internet company via webpage (filled in for Google Takeout) | Request data from internet company via email |
 |-----|-----|-----|-----|-----| -----|
 | Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
 | Can track HTTPS urls | Yes? | Yes | Yes | Yes | Yes |
