@@ -16,8 +16,11 @@
 | [Tracking Options](#tracking-options) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[VPN](#vpn) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Browser based](#browser-based) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger](#activity-logger) |
-| [Discussion](#discussion) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[#Create own browser, e.g. via Chrome custom tabs](#Create-own-browser,-e.g.-via-Chrome-custom-tabs) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Google TakeOut](#Activity-Logger:-Google-TakeOut) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Request via email (e.g. Sanoma)](#Activity-Logger:-Request-via-email-(e.g. Sanoma)) |
+| [Method comparison](#Method-comparison) |
+| [Discussion](#Discussion) |
 
 ## Introduction
 
@@ -39,11 +42,10 @@ Previous study that explored technologies for news consumption looked at... (to 
 In this section we will map out the criteria that can be put on (mobile) technologies for monitoring news consumption.
 
 **Technologically viable:**
-- Works on mobile
-- Works with HTTPS
+- Collects mobile browsing data
+- Can track full HTTPS and HTTP urls
 - Deals with in-app browsing
 - Tracks only whitelisted websites
-- Tracks full url
 - Can be build in less than two month project
 - Easy to maintain, despite evolutions in mobile phone and web technologies
 
@@ -135,22 +137,31 @@ Note that this does not work for all internet companies: facebook / twitter do n
 
 We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the cookies of the users to identify them) ...
 
-## Discussion
+## Method comparison
 
 Evaluation of all options against criteria:
 
 | Criteria | VPN | Browser-base | Create own browser, e.g. via Chrome custom tabs | Activity Logger: Google Takeout | Activity Logger: Request via email Sanoma/NLprofiel |
 |-----|-----|-----|-----|-----| -----|
-| Collects mobile browsing data | Yes | Yes | ? | Yes | Yes |
-| Works with HTTPS | Yes | Yes | ? | Yes | Yes |
-| Deals with in-app browsing | Yes | Yes | ? |  Yes, if configured | Not applicable |
-| Tracks only whitelisted sites | No | No | ? | No | Yes |
-| Tracks full url | No | Yes | ? | Yes | Yes |
-| Can be build in a < 2 month project | Yes |  Yes | ? | Yes | Yes |
+| Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
+| Can track HTTPS urls | Yes? | Yes | Yes | Yes | Yes |
+| Deals with in-app browsing | Yes | Yes | No |  Yes, if configured | Not applicable |
+| Tracks only whitelisted sites | No | No | No | No | Yes |
+| Can be build in less than two month project | Yes |  Yes | ? | Yes | Yes |
 | Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | ? | Yes | Yes |
-| ... insert criteria related to GDPR | ... | ... | ? | ... | ... |
-| Small time investment for participant and researcher at the start and end | Yes | Yes | ? | Yes | Yes |
-| Simple to setup for participant | ? |  Yes | ? | Yes | Yes |
-| Good overview of what information is being share | No, we would have to facilitate that | No, we would have to facilitate that | ? | No, we would have to facilitate that | No, we would have to facilitate that |
-| No action required by participant in daily life situation | Yes | Yes | ? | Yes | Yes |
-| No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | ? | Yes | Yes |
+| No data storage without explicit permission from participant | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
+| ... insert extra criteria related to GDPR | ... | ... | ... | ... | ... |
+| Small time investment for (social science) researcher | Yes | Yes | Yes | Yes | Yes |
+| Small time investment and simple to setup for participant | ? |  Yes | ? | Yes | Yes |
+| Good overview of what information is being shared | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
+| No action required by participant in daily life situation | Yes | Yes | Must use our browser | Yes | Yes |
+| No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Unclear | Yes | Yes |
+
+
+## Discussion
+
+To do:
+- More research needed on the effect of Chrome custom tabs used by other phone apps. How does this affect the output from Browser-based monitoring and Google Takeout?
+- More research needed on the specific requirements we can derive from GDPR?
+- Paragraph on GDPR base email requests is still empty.
+- Criteria on maintainability and time needed to build it, may need critical attention from someone with more experience in thsi then me (Vincent).
