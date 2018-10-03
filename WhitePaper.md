@@ -21,37 +21,46 @@
 
 ## Introduction
 
-To study the role of news consumption in people's opinion reliable research data is needed. Most research so far focuses on survey data and desktop applications. To collect data on news consumption we need to take into account: legal (GDPR) constraints, user experience, and technical feasibility. In this paper we aim to explore what technologies are available and to what extend they meet these requirements.
+The news we read online may influence our opinions and beliefs, while little is known about how much we life in news bubbles that filter certain types of news for certain types of people and the effect this may have on our openions and beliefs.
+To study this reliable research data is needed. Most research so far focuses on survey data and desktop applications (insert references).  However, mobile news consumption is expected to be important too (insert references).
+However, to collect data on mobile (and desktop) news consumption a couple of important criteria need to be taken into account:
+- Legal (GDPR) constraints
+- Participant acceptability: we want participants to be representative of the general population, by which the threshold to participate in study needs to be low.
+- Technical feasibility.
+
+In this paper we aim to explore what technologies are available for monitoring (mobile) news consumption and to what extend they meet these requirements.
 
 ### Related Work
 
-Text.
+Previous study that explored technologies for news consumption looked at... (to be completed)
 
 ### Criteria
+
+In this section we will map out the criteria that can be put on (mobile) technologies for monitoring news consumption.
 
 **Technologically viable:**
 - Works on mobile
 - Works with HTTPS
 - Deals with in-app browsing
-- Tracks only whitelisted sites
+- Tracks only whitelisted websites
 - Tracks full url
-- Can be build in a < two month project
+- Can be build in less than two month project
 - Easy to maintain, despite evolutions in mobile phone and web technologies
 
 **Legal and GDPR compliant:**
 - No data storage without explicit permission from participant
-- ... (note: expand on this with specific critria)
+- ... (note: expand on this with specific criteria)
 
 **Non-intrusive and scalable:**
-- Small time investment for participant and researcher at the start and end
-- Simple to setup for participant
-- Good overview of what information is being share
-- No action required by participant in daily life situation
-- No impact on normal use of phone/PC: e.g. no apps that drain the battery.
+- Small time investment for researcher.
+- Small time investment and simple to setup for participant.
+- Good overview to participant of what information is being shared.
+- Minimal action required by participant in daily life situation, e.g. we do not want the participant to have keep a diary of what news they consume.
+- No impact on normal use of phone/PC: e.g. we do not want apps that rapidly drain the phone battery.
 
 ## Tracking Options
 
-Note: I think a general introduction about how internet traffic works would help, because this will provide the reader with no expert knowledge in this area with a framework.
+Note (Vincent): I think a general introduction about how internet traffic works would help, because this will provide a conceptual framework for the reader without expert knowledge in this area. For example, does our audience know what a proxy server is, what we mean by network interactions, what do we mean by illegal (national law? facebook rules? both?)
 
 ### VPN
 
@@ -76,32 +85,12 @@ Sniffers are software meant to expose network interactions, including HTTP or HT
 | catches all HTTP | All major websites and browsers consider this 'unsafe' and are starting to refuse visiting sites in http.   |
 
 
-
-Evaluation against criteria:
-
-| Criteria | Assessment |
-|-----|-----|
-| Works on mobile | Yes |
-| Works with HTTPS | Yes |
-| Deals with in-app browsing | Yes |
-| Tracks only whitelisted sites | No, but possible |
-| Tracks full url | No |
-| Can be build in a < 2 month project | ? |
-| Easy to maintain, despite evolutions in mobile phone and web technologies | ? |
-| ... insert criteria related to GDPR | ... |
-| Small time investment for participant and researcher at the start and end | Yes |
-| Simple to setup for participant | ? |
-| Good overview of what information is being share | possibly |
-| No action required by participant in daily life situation | Yes |
-| No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |
-
-
 ### Browser Based
 
 Desktop browser plugins can be used to track browsing history (possible for both Chrome and Firefox). Using Google Sync, or other types of syncronisation, the mobile history can be exported to Desktop.
-Facebook: in-app browsing uitzetten => dan browser history opvragen > possible in full FB app, not in FBlite, but does not seem to sync consistently (perhaps only after 5 seconds of viewing, which might even be a good thing) > what happens after update? > disable automatic updates? > FB also has a Download your information option (which includes advertisers_you've_interacted_with).
+Facebook: turn off in-app browsing => request browser history > possible in full FB app, not in FBlite, but does not seem to sync consistently (perhaps only after 5 seconds of viewing, which might even be a good thing) > what happens after update? > disable automatic updates? > FB also has a Download your information option (which includes advertisers_you've_interacted_with).
 
-An alternative method is to create our own browser, which is basically a forwarding app which opens Chrome for us [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d). An app which presents itself as a browser, logs the url and then opens the real default browser so the user notices nothing.
+Comment by Vincent: I have move the 'create our own browser' option below, because it seems an alternative method, by which it is easier to also evaluate it separately. Further, I have renamed it as 'Create own browser, e.g. via Chrome custom tabs' to make it a bit more specific (please correct me if I misunderstood something).
 
  - [Download Chrome settings](https://android.stackexchange.com/questions/117288/how-can-i-find-my-chrome-bookmarks-from-windows/117334).
  - [Google MyActivity](https://myactivity.google.com/myactivity).
@@ -110,32 +99,28 @@ An alternative method is to create our own browser, which is basically a forward
  - [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d).
  - [Either disable in-app browsing per app or disable WebView on the entire phone](https://www.quora.com/How-do-I-turn-off-Android-WebView-in-apps).
 
-Text.
+| Pro | Con |
+|-----|-----|
+| Uses existing browser technology | Requires participant to turn off in-app browsing |
+| Works with all browsers | No distinction between mobile and desktop browsing |
+| ... | Extra research needed to understand how this works when apps are updated over time |
+| ... | Extra research need to understand how this interacts with Chrome custom tabs |
+
+
+### Create own browser, e.g. via Chrome custom tabs
+An alternative method is to create a forwarding app that opens Chrome for us [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d). An app which presents itself as a browser, logs the url and then opens the real default browser so the user notices nothing. Chrome custom tabs is an example of this.
 
 | Pro | Con |
 |-----|-----|
-| Reason 1 | Reason 2 |
-| Reason 3 | Reason 4 |
+| ... | User is expected to use this new browser, but how do we check that he/she really does? |
+| ... | Unclear what this adds relative to Browser based option (above) |
 
-| Criteria | Assessment |
-|-----|-----|
-| Works on mobile | Yes |
-| Works with HTTPS | Yes |
-| Deals with in-app browsing | Yes |
-| Tracks only whitelisted sites | No, but possible |
-| Tracks full url | Yes |
-| Can be build in a < 2 month project | Yes |
-| Easy to maintain, despite evolutions in mobile phone and web technologies | Yes |
-| ... insert criteria related to GDPR | ... |
-| Small time investment for participant and researcher at the start and end | Yes |
-| Simple to setup for participant | Yes |
-| Good overview of what information is being share | No, but possible |
-| No action required by participant in daily life situation | Yes |
-| No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes |
 
-### Activity Logger
+### Activity Logger: Google TakeOut
 
-GDPR request via email (e.g. sanoma or NLprofiel and using the cookies of the users to identify them) or directly download data via special webpage (at Google this is [TakeOut](http://takeout.google.com) which gives URL + timestamp + deviceid). I verified that signing into Chrome on mobile and on Desktop (and enabling sync) gives the browser history on Google Takeout. It includes a client_id and a time_usec. In-app browser history is available in full chrome app, but does not sync. Note that facebook / twitter do not allow analytics to happen on their website (except via their specific tools). How does this interact with our writing a plugin? Note also that Chrome Custom Tabs does not forward its browser history to Google Takeout.
+We could do a GDPR request by directly downloading data via special webpage (at Google this is [TakeOut](http://takeout.google.com) which gives URL + timestamp + deviceid). I verified that signing into Chrome on mobile and on Desktop (and enabling sync) gives the browser history on Google Takeout. It includes a client_id and a time_usec. In-app browser history is available in full chrome app, but does not sync.
+
+Note that this does not work for all internet companies: facebook / twitter do not allow analytics to happen on their website (except via their specific tools *Comment Vincent: Can we elaborate here?* ). How does this interact with our writing a plugin? *Comment Vincent: Can we elaborate here?* Note also that Chrome Custom Tabs does not forward its browser history to Google Takeout. So, any app using Chrome Custom Tabs will bias our data collection.
 
  - [Disable all in-app browsing while keeping Chrome as default browser](https://android.stackexchange.com/questions/201150/disable-all-in-app-browsing-while-keeping-chrome-as-default-browser)
  - [Disable in-app browsing on the Facebook Lite app](https://android.stackexchange.com/questions/201210/how-can-in-app-browsing-be-disabled-on-the-facebook-lite-app)
@@ -143,11 +128,29 @@ GDPR request via email (e.g. sanoma or NLprofiel and using the cookies of the us
 
 | Pro | Con |
 |-----|-----|
-| Reason 1 | Reason 2 |
-| Reason 3 | Reason 4 |
+| ... | Google takeout will not be representative if the participant uses many apps that work with Chrome Custom Tabs, because those traffic will not end up in Google Take out |
+| ... | Google takeout requires that we have similar solutions for Twitter and Facebook, but that does not work if they use their own browser or Chrome custom tab |
 
-(to do: Do criteria evaluation separately for email and google take out).
+### Activity Logger: Request via email (e.g. Sanoma)
+
+We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the cookies of the users to identify them) ...
 
 ## Discussion
 
-Text.
+Evaluation of all options against criteria:
+
+| Criteria | VPN | Browser-base | Create own browser, e.g. via Chrome custom tabs | Activity Logger: Google Takeout | Activity Logger: Request via email Sanoma/NLprofiel |
+|-----|-----|-----|-----|-----|
+| Collects mobile browsing data | Yes | Yes | ? | Yes | Yes |
+| Works with HTTPS | Yes | Yes | ? | Yes | Yes |
+| Deals with in-app browsing | Yes | Yes | ? |  Yes, if configured | Not applicable |
+| Tracks only whitelisted sites | No | No | ? | No | Yes |
+| Tracks full url | No | Yes | ? | Yes | Yes |
+| Can be build in a < 2 month project | Yes |  Yes | ? | Yes | Yes |
+| Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | ? | Yes | Yes |
+| ... insert criteria related to GDPR | ... | ... | ? | ... | ... |
+| Small time investment for participant and researcher at the start and end | Yes | Yes | ? | Yes | Yes |
+| Simple to setup for participant | ? |  Yes | ? | Yes | Yes |
+| Good overview of what information is being share | No, we would have to facilitate that | No, we would have to facilitate that | ? | No, we would have to facilitate that | No, we would have to facilitate that |
+| No action required by participant in daily life situation | Yes | Yes | ? | Yes | Yes |
+| No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | ? | Yes | Yes |
