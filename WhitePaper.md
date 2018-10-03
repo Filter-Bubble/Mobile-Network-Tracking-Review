@@ -140,7 +140,7 @@ We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the coo
 Evaluation of all options against criteria:
 
 | Criteria | VPN | Browser-base | Create own browser, e.g. via Chrome custom tabs | Activity Logger: Google Takeout | Activity Logger: Request via email Sanoma/NLprofiel |
-|-----|-----|-----|-----|-----|
+|-----|-----|-----|-----|-----| -----|
 | Collects mobile browsing data | Yes | Yes | ? | Yes | Yes |
 | Works with HTTPS | Yes | Yes | ? | Yes | Yes |
 | Deals with in-app browsing | Yes | Yes | ? |  Yes, if configured | Not applicable |
