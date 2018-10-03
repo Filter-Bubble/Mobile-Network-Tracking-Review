@@ -16,11 +16,11 @@
 | [Tracking Options](#tracking-options) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[VPN](#vpn) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Browser based](#browser-based) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Create own browser, e.g. via Chrome custom tabs](#Create-own-browser,-e.g.-via-Chrome-custom-tabs) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Google TakeOut](#Activity-Logger:-Google-TakeOut) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Request via email (e.g. Sanoma)](#Activity-Logger:-Request-via-email-(e.g. Sanoma)) |
-| [Method comparison](#Method-comparison) |
-| [Discussion](#Discussion) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Create own browser, e.g. via Chrome custom tabs](#create-own-browser,-e.g.-via-chrome-custom-tabs) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Google TakeOut](#activity-logger:-google-takeout) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Request via email (e.g. Sanoma)](#activity-logger:-request-via-email-(e.g. sanoma)) |
+| [Method comparison](#method-comparison) |
+| [Discussion](#discussion) |
 
 ## Introduction
 
