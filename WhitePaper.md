@@ -17,8 +17,8 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[VPN](#vpn) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Browser based](#browser-based) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Create own browser via Chrome custom tabs](#create-own-browser-via-chrome-custom-tabs) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Google TakeOut](#activity-logger:-google-takeout) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Request via email](#activity-logger:-request-via-email) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger Google TakeOut](#activity-logger-google-takeout) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger Request via email](#activity-logger-request-via-email) |
 | [Method comparison](#method-comparison) |
 | [Discussion](#discussion) |
 
