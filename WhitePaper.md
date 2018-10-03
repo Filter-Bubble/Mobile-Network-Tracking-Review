@@ -48,6 +48,7 @@ In this section we will map out the criteria that can be put on (mobile) technol
 - Tracks only whitelisted websites
 - Can be build in less than two month project
 - Easy to maintain, despite evolutions in mobile phone and web technologies
+- Data can be collected over long periods of time
 
 **Legal and GDPR compliant:**
 - No data storage without explicit permission from participant
@@ -106,16 +107,19 @@ Comment by Vincent: I have move the 'create our own browser' option below, becau
 | Uses existing browser technology | Requires participant to turn off in-app browsing |
 | Works with all browsers | No distinction between mobile and desktop browsing |
 | ... | Extra research needed to understand how this works when apps are updated over time |
-| ... | Extra research need to understand how this interacts with Chrome custom tabs |
+| ... | Extra research need to understand how this interacts with Chrome custom tabs in other apps |
 
 
 ### Create own browser via Chrome custom tabs
 An alternative method is to create a forwarding app that opens Chrome for us [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d). An app which presents itself as a browser, logs the url and then opens the real default browser so the user notices nothing. Chrome custom tabs is an example of this.
 
+*Comment Vincent: How do we check that the default is used by the user. Is it possible that some other phone apps overrule the default browser and choose their own favorite?*
+
+*Comment Vincent: It is unclear to me what this option adds relative to Browser based option (above)*
+
 | Pro | Con |
 |-----|-----|
-| ... | User is expected to use this new browser, but how do we check that he/she really does? |
-| ... | Unclear what this adds relative to Browser based option (above) |
+| ... | ... |
 
 
 ### Request data from internet company via webpage
@@ -128,10 +132,13 @@ Note that this does not work for all internet companies: facebook / twitter do n
  - [Disable in-app browsing on the Facebook Lite app](https://android.stackexchange.com/questions/201210/how-can-in-app-browsing-be-disabled-on-the-facebook-lite-app)
  - [Include in-app browsing history in Chrome sync](https://android.stackexchange.com/questions/201204/include-in-app-browsing-history-in-chrome-sync)
 
+
+*Comment Vincent: Do I understand it correctly that Google takeout will not be representative if the participant uses many apps that work with Chrome Custom Tabs, because those traffic will not end up in Google Take out?*
+
 | Pro | Con |
 |-----|-----|
-| ... | Google takeout will not be representative if the participant uses many apps that work with Chrome Custom Tabs, because those traffic will not end up in Google Take out |
-| ... | Google takeout requires that we have similar solutions for Twitter and Facebook, but that does not work if they use their own browser or Chrome custom tab |
+| Easy procedure for the participant | ... |
+| Data can be collected over long periods of time | Google takeout requires that we have similar solutions for Twitter and Facebook based news consumption |
 
 ### Request data from internet company via email
 
@@ -149,6 +156,7 @@ Evaluation of all options against criteria:
 | Tracks only whitelisted sites | No | No | No | No | Yes |
 | Can be build in less than two month project | Yes |  Yes | ? | Yes | Yes |
 | Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | ? | Yes | Yes |
+| Data can be collected over long periods of time | Yes | Yes, if participant does not delete their browser history | ? | Yes | Unknown |
 | No data storage without explicit permission from participant | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
 | ... insert extra criteria related to GDPR | ... | ... | ... | ... | ... |
 | Small time investment for (social science) researcher | Yes | Yes | Yes | Yes | Yes |
@@ -163,5 +171,5 @@ Evaluation of all options against criteria:
 To do:
 - More research needed on the effect of Chrome custom tabs used by other phone apps. How does this affect the output from Browser-based monitoring and Google Takeout?
 - More research needed on the specific requirements we can derive from GDPR?
-- Paragraph on GDPR base email requests is still empty.
-- Criteria on maintainability and time needed to build it, may need critical attention from someone with more experience in thsi then me (Vincent).
+- More research needed on pros and cons of GDPR-based data requests via email.
+- The criteria on maintainability and time needed to build it need critical attention from someone with more experience in this than me (Vincent).
