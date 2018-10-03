@@ -16,9 +16,9 @@
 | [Tracking Options](#tracking-options) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[VPN](#vpn) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Browser based](#browser-based) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Create own browser, e.g. via Chrome custom tabs](#create-own-browser,-e.g.-via-chrome-custom-tabs) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Create own browser via Chrome custom tabs](#create-own-browser-via-chrome-custom-tabs) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Google TakeOut](#activity-logger:-google-takeout) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Request via email (e.g. Sanoma)](#activity-logger:-request-via-email-(e.g. sanoma)) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Activity Logger: Request via email](#activity-logger:-request-via-email) |
 | [Method comparison](#method-comparison) |
 | [Discussion](#discussion) |
 
@@ -109,7 +109,7 @@ Comment by Vincent: I have move the 'create our own browser' option below, becau
 | ... | Extra research need to understand how this interacts with Chrome custom tabs |
 
 
-### Create own browser, e.g. via Chrome custom tabs
+### Create own browser via Chrome custom tabs
 An alternative method is to create a forwarding app that opens Chrome for us [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d). An app which presents itself as a browser, logs the url and then opens the real default browser so the user notices nothing. Chrome custom tabs is an example of this.
 
 | Pro | Con |
@@ -133,7 +133,7 @@ Note that this does not work for all internet companies: facebook / twitter do n
 | ... | Google takeout will not be representative if the participant uses many apps that work with Chrome Custom Tabs, because those traffic will not end up in Google Take out |
 | ... | Google takeout requires that we have similar solutions for Twitter and Facebook, but that does not work if they use their own browser or Chrome custom tab |
 
-### Activity Logger: Request via email (e.g. Sanoma)
+### Activity Logger: Request via email
 
 We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the cookies of the users to identify them) ...
 
