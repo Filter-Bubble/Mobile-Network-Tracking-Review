@@ -26,12 +26,7 @@
 
 The news we read online may influence our opinions and beliefs, while little is known about how much we life in news bubbles that filter certain types of news for certain types of people and the effect this may have on our openions and beliefs.
 To study this reliable research data is needed. Most research so far focuses on survey data and desktop applications (insert references).  However, mobile news consumption is expected to be important too (insert references).
-However, to collect data on mobile (and desktop) news consumption a couple of important criteria need to be taken into account:
-- Legal (GDPR) constraints
-- Participant acceptability: we want participants to be representative of the general population, by which the threshold to participate in study needs to be low.
-- Technical feasibility.
-
-In this paper we aim to explore what technologies are available for monitoring (mobile) news consumption and to what extend they meet these requirements.
+However, to collect data on mobile (and desktop) news consumption a couple of important criteria need to be taken into account, which we will discuss in the Criteria section. Based on these criteria we will explore what technologies are available for monitoring (mobile) news consumption and to what extend they meet these requirements.
 
 ### Related Work
 
