@@ -55,7 +55,7 @@ Note that we can make any approach GDPR compliant based on secure storage and fi
 - Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address.
 
 **Non-intrusive and scalable:**
-- Small time investment for researcher.
+- Small time investment for researcher. (to do: define this more clearly)
 - Small time investment and simple to setup for participant.
 - Good overview to participant of what information is being shared.
 - Minimal action required by participant in daily life situation, e.g. we do not want the participant to have keep a diary of what news they consume.
@@ -118,8 +118,13 @@ An alternative method is to create a forwarding app that opens Chrome for us [Ma
 
 | Pro | Con |
 |-----|-----|
+| Avoids downsides of browser-based (context switch)and web view (cookie information not shared between apps and vulnerabilities)| Participants may primarily browse news within dedicated News apps and not via their browser |
+| ... | Requires installation of chrome browser and to keep it up to date. |
+| ... | All Chrome bugs affect the custom tab too, if the user does not update their Chrome version the bug will be hard to address |
+| ... | Chrome custom tabs do not automatically leave the activity stack after we redirect back to the app, and solution is tedious. |
 | ... | ... |
 
+[Evaluation of using chrome custom tabs (blog post)](https://medium.com/@vardaansh1/use-chrome-custom-tabs-they-said-it-will-be-fun-they-said-b5fabe5daea3)
 
 ### Request data from internet company via webpage
 
@@ -151,11 +156,11 @@ Evaluation of all options against criteria:
 |-----|-----|-----|-----|-----| -----|
 | 1. Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
 | 2. Can track HTTPS and HTTP urls | Yes? | Yes | Yes | Yes | Yes |
-| 3. Deals with in-app browsing | Yes | Yes | No |  Yes, if configured | Not applicable |
+| 3. Deals with in-app browsing | Yes | No, this needs to be turned off in the other apps | No |  Yes, if configured | Not applicable |
 | 4. Tracks only whitelisted sites | No | No | No | No | Yes |
 | 5. Can be build in less than two month project | Yes |  Yes | ? | Yes | Yes |
-| 6. Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | ? | Yes | Yes |
-| 7. Data can be collected over long periods of time (multiple months) | Yes | Yes, if participant does not delete their browser history | ? | Yes | Unknown |
+| 6. Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | Yes? | Yes | Yes |
+| 7. Data can be collected over long periods of time (multiple months) | Yes | Yes, if participant does not delete their browser history | Yes | Yes | Unknown |
 | 8. No data storage without explicit permission from participant | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
 | 9. Does not store contact information: telephone number or email address. | Yes, unless it is part of an url? | Yes, unless it is part of an url? | Yes, unless it is part of an url? | No | Yes |
 | 10. Does not store the social media account name. | Yes, unless it is part of an url? | Yes, unless it is part of an url? | Yes, unless it is part of an url? | No | Yes |
@@ -164,7 +169,7 @@ Evaluation of all options against criteria:
 | 13. Small time investment and simple to setup for participant | ? |  Yes | ? | Yes | Yes |
 | 14. Good overview of what information is being shared | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
 | 15. No action required by participant in daily life situation | Yes | Yes | Must use our browser | Yes | Yes |
-| 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Unclear | Yes | Yes |
+| 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Yes, assuming it only collects browsing behavior | Yes | Yes |
 
 
 ## Discussion
