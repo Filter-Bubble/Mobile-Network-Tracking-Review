@@ -24,8 +24,8 @@
 
 ## Introduction
 
-The news we read online may influence our opinions and beliefs, while little is known about how much we life in news bubbles that filter certain types of news for certain types of people and the effect this may have on our openions and beliefs.
-To study this reliable research data is needed. Most research so far focuses on survey data and desktop applications (insert references).  However, mobile news consumption is expected to be important too (insert references).
+The news we read online may influence our opinions and beliefs, but little is known about how much we live in news bubbles that filter the news based on our personal characteristics and interests and the effect these bubbles may have on our opinions and beliefs.
+To study this, reliable research data is needed. Most research so far focuses on survey data and desktop applications (insert references).  However, mobile news consumption is expected to be important too (insert references).
 However, to collect data on mobile (and desktop) news consumption a couple of important criteria need to be taken into account, which we will discuss in the Criteria section. Based on these criteria we will explore what technologies are available for monitoring (mobile) news consumption and to what extend they meet these requirements.
 
 ### Related Work
@@ -46,8 +46,11 @@ In this section we will map out the criteria that can be put on (mobile) technol
 - Data can be collected over long periods of time (multiple months)
 
 **Legal and GDPR compliant:**
+Note that we can make any approach GDPR compliant based on secure storage and filtering of data, and obtaining explicit approval from the participant. The question here is mainly about whether the approach is GDPR compliant by default.
 - No data storage without explicit permission from participant
-- ... (note: expand on this with specific criteria)
+- Does not store contact information: telephone number or email address.
+- Does not store the social media account name.
+- Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address.
 
 **Non-intrusive and scalable:**
 - Small time investment for researcher.
@@ -58,7 +61,7 @@ In this section we will map out the criteria that can be put on (mobile) technol
 
 ## Tracking Options
 
-Note (Vincent): I think a general introduction about how internet traffic works would help, because this will provide a conceptual framework for the reader without expert knowledge in this area. For example, does our audience know what a proxy server is, what we mean by network interactions, what do we mean by illegal (national law? facebook rules? both?)
+*Note (Vincent): I think a general introduction about how internet traffic works would help, because this will provide a conceptual framework for the reader without expert knowledge in this area. For example, does our audience know what a proxy server is, what we mean by network interactions, what do we mean by illegal (national law? facebook rules? both?)*
 
 ### VPN
 
@@ -88,7 +91,7 @@ Sniffers are software meant to expose network interactions, including HTTP or HT
 Desktop browser plugins can be used to track browsing history (possible for both Chrome and Firefox). Using Google Sync, or other types of syncronisation, the mobile history can be exported to Desktop.
 Facebook: turn off in-app browsing => request browser history > possible in full FB app, not in FBlite, but does not seem to sync consistently (perhaps only after 5 seconds of viewing, which might even be a good thing) > what happens after update? > disable automatic updates? > FB also has a Download your information option (which includes advertisers_you've_interacted_with).
 
-Comment by Vincent: I have move the 'create our own browser' option below, because it seems an alternative method, by which it is easier to also evaluate it separately. Further, I have renamed it as 'Create own browser, e.g. via Chrome custom tabs' to make it a bit more specific (please correct me if I misunderstood something).
+*Comment by Vincent: I have moved the 'create our own browser' option down, because it seems an alternative method, by which it is easier to also evaluate it separately. Further, I have renamed it as 'Create own browser, e.g. via Chrome custom tabs' to make it a bit more specific (please correct me if I misunderstood something).*
 
  - [Download Chrome settings](https://android.stackexchange.com/questions/117288/how-can-i-find-my-chrome-bookmarks-from-windows/117334).
  - [Google MyActivity](https://myactivity.google.com/myactivity).
@@ -109,7 +112,6 @@ Comment by Vincent: I have move the 'create our own browser' option below, becau
 An alternative method is to create a forwarding app that opens Chrome for us [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d). An app which presents itself as a browser, logs the url and then opens the real default browser so the user notices nothing. Chrome custom tabs is an example of this.
 
 *Comment Vincent: How do we check that the default is used by the user. Is it possible that some other phone apps overrule the default browser and choose their own favorite?*
-
 *Comment Vincent: It is unclear to me what this option adds relative to Browser based option (above)*
 
 | Pro | Con |
@@ -143,22 +145,24 @@ We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the coo
 
 Evaluation of all options against criteria:
 
-| Criteria | VPN | Browser-base | Create own browser, e.g. via Chrome custom tabs | Request data from internet company via webpage (filled in for Google Takeout) | Request data from internet company via email |
+| Criteria | VPN | Browser-based | Create own browser, e.g. via Chrome custom tabs | Request data from internet company via webpage (filled in for Google Takeout) | Request data from internet company via email |
 |-----|-----|-----|-----|-----| -----|
-| Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
-| Can track HTTPS and HTTP urls | Yes? | Yes | Yes | Yes | Yes |
-| Deals with in-app browsing | Yes | Yes | No |  Yes, if configured | Not applicable |
-| Tracks only whitelisted sites | No | No | No | No | Yes |
-| Can be build in less than two month project | Yes |  Yes | ? | Yes | Yes |
-| Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | ? | Yes | Yes |
-| Data can be collected over long periods of time (multiple months) | Yes | Yes, if participant does not delete their browser history | ? | Yes | Unknown |
-| No data storage without explicit permission from participant | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
-| ... insert extra criteria related to GDPR | ... | ... | ... | ... | ... |
-| Small time investment for (social science) researcher | Yes | Yes | Yes | Yes | Yes |
-| Small time investment and simple to setup for participant | ? |  Yes | ? | Yes | Yes |
-| Good overview of what information is being shared | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
-| No action required by participant in daily life situation | Yes | Yes | Must use our browser | Yes | Yes |
-| No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Unclear | Yes | Yes |
+| 1. Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
+| 2. Can track HTTPS and HTTP urls | Yes? | Yes | Yes | Yes | Yes |
+| 3. Deals with in-app browsing | Yes | Yes | No |  Yes, if configured | Not applicable |
+| 4. Tracks only whitelisted sites | No | No | No | No | Yes |
+| 5. Can be build in less than two month project | Yes |  Yes | ? | Yes | Yes |
+| 6. Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | ? | Yes | Yes |
+| 7. Data can be collected over long periods of time (multiple months) | Yes | Yes, if participant does not delete their browser history | ? | Yes | Unknown |
+| 8. No data storage without explicit permission from participant | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
+| 9. Does not store contact information: telephone number or email address. | Yes, unless it is part of an url? | Yes, unless it is part of an url? | Yes, unless it is part of an url? | No | Yes |
+| 10. Does not store the social media account name. | Yes, unless it is part of an url? | Yes, unless it is part of an url? | Yes, unless it is part of an url? | No | Yes |
+| 11. Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address. | No? | Yes? | Yes? | Yes, if data request is made correctly | Yes |
+| 12. Small time investment for (social science) researcher | Yes | Yes | Yes | Yes | Yes |
+| 13. Small time investment and simple to setup for participant | ? |  Yes | ? | Yes | Yes |
+| 14. Good overview of what information is being shared | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
+| 15. No action required by participant in daily life situation | Yes | Yes | Must use our browser | Yes | Yes |
+| 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Unclear | Yes | Yes |
 
 
 ## Discussion
