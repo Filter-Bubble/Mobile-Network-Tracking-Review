@@ -46,7 +46,9 @@ In this section we will map out the criteria that can be put on (mobile) technol
 - Data can be collected over long periods of time (multiple months)
 
 **Legal and GDPR compliant:**
+
 Note that we can make any approach GDPR compliant based on secure storage and filtering of data, and obtaining explicit approval from the participant. The question here is mainly about whether the approach is GDPR compliant by default.
+
 - No data storage without explicit permission from participant
 - Does not store contact information: telephone number or email address.
 - Does not store the social media account name.
