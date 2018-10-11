@@ -1,8 +1,8 @@
-# Title
+# Technologies for Monitoring News Consumption
 
 | Abstract |
 |----------|
-| Text. |
+| This whitepaper explores what technologies are available for monitoring (mobile) news consumption and to what extend they meet certain requirements. |
 
 | Keywords |
 |----------|
@@ -15,46 +15,48 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[Criteria](#criteria) |
 | [Tracking Options](#tracking-options) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[VPN](#vpn) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Browser based](#browser-based) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Create own browser via Chrome custom tabs](#create-own-browser-via-chrome-custom-tabs) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Request data from internet company via webpage](#request-data-from-internet-company-via-webpage) |
-| &nbsp;&nbsp;&nbsp;&nbsp;[Request data from internet company via email](#request-data-from-internet-company-via-email) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Browser Based with Mobile Sync](#browser-based-with-mobile-sync) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Request data from Browser/App company](#request-data-from-browser-app-company) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Create own mobile browser via "Custom Tabs"](#create-own-mobile-browser-via-custom-tabs) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Request data from News company](#request-data-from-news-company) |
 | [Method comparison](#method-comparison) |
 | [Discussion](#discussion) |
 
 ## Introduction
 
-The news we read online may influence our opinions and beliefs, but little is known about how much we live in news bubbles that filter the news based on our personal characteristics and interests and the effect these bubbles may have on our opinions and beliefs.
-To study this, reliable research data is needed. Most research so far focuses on survey data and desktop applications (insert references).  However, mobile news consumption is expected to be important too (insert references).
-However, to collect data on mobile (and desktop) news consumption a couple of important criteria need to be taken into account, which we will discuss in the Criteria section. Based on these criteria we will explore what technologies are available for monitoring (mobile) news consumption and to what extend they meet these requirements.
+The news we read online may influence our opinions and beliefs. However, little is known about how much we live in news bubbles that filter the news based on our personal characteristics and interests, and the effect such bubbles may have on our opinions and beliefs.
+
+To study this effect, reliable news consumption data is needed. Most research so far focuses on self-reported survey data and on tracking desktop activity (_insert references_). However, news consumption via mobile devices is expected to be ever more important (_insert references_).
+
+To collect data about mobile news consumption, a couple of important criteria need to be taken into account. These will be discussed in the [Criteria](#criteria) section. Based on our criteria, we will explore what technologies are available for monitoring mobile news consumption and to what extend these meet the requirements.
 
 ### Related Work
 
-Previous study that explored technologies for news consumption looked at... (to be completed)
+Previous study that explored technologies for news consumption looked at... (_to be completed_)
 
 ### Criteria
 
-In this section we will map out the criteria that can be put on (mobile) technologies for monitoring news consumption.
+This section lists several criteria by which to judge technologies for monitoring mobile news consumption.
 
-**Technologically viable:**
+**Technological viability:**
 - Collects mobile browsing data
 - Can track full HTTPS and HTTP urls
 - Deals with in-app browsing
 - Tracks only whitelisted websites
-- Can be build in less than two month project
+- Can be built in a short amount of time
 - Easy to maintain, despite evolutions in mobile phone and web technologies
 - Data can be collected over long periods of time (multiple months)
 
-**Legal and GDPR compliant:**
+**Legality and GDPR compliance:**
 
-Note that we can make any approach GDPR compliant based on secure storage and filtering of data, and obtaining explicit approval from the participant. The question here is mainly about whether the approach is GDPR compliant by default.
+It is important to remember that any approach can, in principle, be make GDPR compliant by using secure storage, filtering of data and obtaining explicit approval from the participant. The real question here is  whether the approach is GDPR compliant by default or easy to make compliant.
 
 - No data storage without explicit permission from participant
 - Does not store contact information: telephone number or email address.
 - Does not store the social media account name.
 - Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address.
 
-**Non-intrusive and scalable:**
+**Non-intrusiveness and scalability:**
 - Small time investment for researcher. (to do: define this more clearly)
 - Small time investment and simple to setup for participant.
 - Good overview to participant of what information is being shared.
@@ -75,7 +77,7 @@ Sniffers are software meant to expose network interactions, including HTTP or HT
  - [Charles Proxy sniffer app](https://www.charlesproxy.com/documentation/proxying/ssl-proxying/).
  - [Security SE about HTTPS](https://security.stackexchange.com/questions/153440/intercepting-android-app-traffic-with-burp).
  - [3G/4G does not allow proxy](https://medium.com/@rotxed/how-to-debug-http-s-traffic-on-android-7fbe5d2a34)
- - [Key pinning to protext MitM](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning).
+ - [Key pinning to protect MitM](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning).
  - [idem](https://www.nowsecure.com/blog/2017/06/15/certificate-pinning-for-android-and-ios-mobile-man-in-the-middle-attack-prevention).
  - [Changes to Trusted Certificate Authorities in Android Nougat](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html).
  - [Whom You Gonna Trust? A Longitudinal Study on TLS Notary Service](https://www.sba-research.org/wp-content/uploads/publications/TLSnotaries_preprint.pdf).
@@ -84,16 +86,23 @@ Sniffers are software meant to expose network interactions, including HTTP or HT
 | Pro | Con |
 |-----|-----|
 | Easy to set up with existing VPN Apps in the playstore + openVPN or so at server | https hides the url, only server name (ie. DNS records) available. |
-| will get all traffic (Apps + browser) | |
-| catches all HTTP | All major websites and browsers consider this 'unsafe' and are starting to refuse visiting sites in http.   |
+| will get all traffic (Apps + browser) | All major websites and browsers consider this 'unsafe' and are starting to refuse visiting sites in http. |
+| catches all HTTP | |
 
+### Browser Based with Mobile Sync
 
-### Browser Based
+Desktop browser plugins can be used to track browsing history (possible for both Chrome and Firefox). Using Google Sync, or other types of synchronisation, the mobile history can be exported to Desktop.
 
-Desktop browser plugins can be used to track browsing history (possible for both Chrome and Firefox). Using Google Sync, or other types of syncronisation, the mobile history can be exported to Desktop.
-Facebook: turn off in-app browsing => request browser history > possible in full FB app, not in FBlite, but does not seem to sync consistently (perhaps only after 5 seconds of viewing, which might even be a good thing) > what happens after update? > disable automatic updates? > FB also has a Download your information option (which includes advertisers_you've_interacted_with).
+In-app browsing history needs to be included. This can be a problem:
+ - [Include in-app browsing history in Chrome sync](https://android.stackexchange.com/questions/201204/include-in-app-browsing-history-in-chrome-sync)
 
-*Comment by Vincent: I have moved the 'create our own browser' option down, because it seems an alternative method, by which it is easier to also evaluate it separately. Further, I have renamed it as 'Create own browser, e.g. via Chrome custom tabs' to make it a bit more specific (please correct me if I misunderstood something).*
+Then, in-app browsing needs to be switched off globally. This, too, can be a problem:
+ - [Disable all in-app browsing while keeping Chrome as default browser](https://android.stackexchange.com/questions/201150/disable-all-in-app-browsing-while-keeping-chrome-as-default-browser)
+
+Then, in-app browsing needs to be switched off for each app (Facebook: turn off in-app browsing => request browser history > possible in full FB app, not in FBlite > what happens after update? > disable automatic updates? > FB also has a Download your information option which includes advertisers_you've_interacted_with). This, again, can be a problem:
+ - [Disable in-app browsing on the Facebook Lite app](https://android.stackexchange.com/questions/201210/how-can-in-app-browsing-be-disabled-on-the-facebook-lite-app)
+
+Extra research is needed to understand how this works when apps are updated over time and to understand how this interacts with Chrome custom tabs in other apps.
 
  - [Download Chrome settings](https://android.stackexchange.com/questions/117288/how-can-i-find-my-chrome-bookmarks-from-windows/117334).
  - [Google MyActivity](https://myactivity.google.com/myactivity).
@@ -104,55 +113,55 @@ Facebook: turn off in-app browsing => request browser history > possible in full
 
 | Pro | Con |
 |-----|-----|
-| Uses existing browser technology | Requires participant to turn off in-app browsing |
-| Works with all browsers | No distinction between mobile and desktop browsing |
-| ... | Extra research needed to understand how this works when apps are updated over time |
-| ... | Extra research need to understand how this interacts with Chrome custom tabs in other apps |
+| Uses existing browser technology | Does not (always) include in-app browsing history |
+| Works with all browsers | Requires participant to keep in-app browsing off (globally or for each app) |
+|  | App-updates might automatically bring in-app browsing back on |
+|  | Not always distinction between mobile and desktop browsing |
 
-
-### Create own browser via Chrome custom tabs
-An alternative method is to create a forwarding app that opens Chrome for us [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d). An app which presents itself as a browser, logs the url and then opens the real default browser so the user notices nothing. Chrome custom tabs is an example of this.
-
-*Comment Vincent: How do we check that the default is used by the user. Is it possible that some other phone apps overrule the default browser and choose their own favorite?*
-*Comment Vincent: It is unclear to me what this option adds relative to Browser based option (above)*
-
-| Pro | Con |
-|-----|-----|
-| Avoids downsides of browser-based (context switch)and web view (cookie information not shared between apps and vulnerabilities)| Participants may primarily browse news within dedicated News apps and not via their browser |
-| ... | Requires installation of chrome browser and to keep it up to date. |
-| ... | All Chrome bugs affect the custom tab too, if the user does not update their Chrome version the bug will be hard to address |
-| ... | Chrome custom tabs do not automatically leave the activity stack after we redirect back to the app, and solution is tedious. |
-| ... | ... |
-
-[Evaluation of using chrome custom tabs (blog post)](https://medium.com/@vardaansh1/use-chrome-custom-tabs-they-said-it-will-be-fun-they-said-b5fabe5daea3)
-
-### Request data from internet company via webpage
+### Request data from Browser/App company
 
 We could do a GDPR request by directly downloading data via special webpage (at Google this is [TakeOut](http://takeout.google.com) which gives URL + timestamp + deviceid). I verified that signing into Chrome on mobile and on Desktop (and enabling sync) gives the browser history on Google Takeout. It includes a client_id and a time_usec. In-app browser history is available in full chrome app, but does not sync.
 
-Note that this does not work for all internet companies: facebook / twitter do not allow analytics to happen on their website (except via their specific tools *Comment Vincent: Can we elaborate here?* ). How does this interact with our writing a plugin? *Comment Vincent: Can we elaborate here?* Note also that Chrome Custom Tabs does not forward its browser history to Google Takeout. So, any app using Chrome Custom Tabs will bias our data collection.
+Note that this does not work for all internet companies: facebook / twitter do not allow analytics to happen on their website (except via their specific tools *Comment Vincent: Can we elaborate here?* ). How does this interact with our writing a plugin? *Comment Vincent: Can we elaborate here?*
 
- - [Disable all in-app browsing while keeping Chrome as default browser](https://android.stackexchange.com/questions/201150/disable-all-in-app-browsing-while-keeping-chrome-as-default-browser)
- - [Disable in-app browsing on the Facebook Lite app](https://android.stackexchange.com/questions/201210/how-can-in-app-browsing-be-disabled-on-the-facebook-lite-app)
- - [Include in-app browsing history in Chrome sync](https://android.stackexchange.com/questions/201204/include-in-app-browsing-history-in-chrome-sync)
-
-
-*Comment Vincent: Do I understand it correctly that Google takeout will not be representative if the participant uses many apps that work with Chrome Custom Tabs, because those traffic will not end up in Google Take out?*
+Note, again, that Chrome Custom Tabs does not forward its browser history to Google Takeout. So, any app using Chrome Custom Tabs will bias our data collection, similar to the previous section.
 
 | Pro | Con |
 |-----|-----|
-| Easy procedure for the participant | ... |
-| Data can be collected over long periods of time | Google takeout requires that we have similar solutions for Twitter and Facebook based news consumption |
+| Easy procedure for the participant | Does not (always) include in-app browsing history |
+| Data can be collected over long periods of time | Requires participant to keep in-app browsing off (globally or for each app) |
+|  | App-updates might automatically bring in-app browsing back on |
+|  | Not always distinction between mobile and desktop browsing |
 
-### Request data from internet company via email
+### Create own mobile browser via "Custom Tabs"
 
-We could do a GDPR request via email (e.g. sanoma or NLprofiel and using the cookies of the users to identify them) ...
+Although many apps allow the user to specify whether or not to use in-app browsing, some apps do not. Furthermore, it is hard to verify that users will keep in-app browsing turned off all the time, or that it does not automatically revert back after an update.
+
+One method to log in-app browsing is to create a forwarding app that presents itself as the default browser, logs the url and then opens a real browsing (such as Chrome, however: [Evaluation of using chrome custom tabs (blog post)](https://medium.com/@vardaansh1/use-chrome-custom-tabs-they-said-it-will-be-fun-they-said-b5fabe5daea3)) to render the webpage [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d).
+
+However, how would the researcher verify that  the user does not change the default browser. And can we be certain that some apps cannot overrule the default browser and choose their own favourite?
+
+| Pro | Con |
+|-----|-----|
+| Logs both regular and in-app browsing history | Difficult to engineer such a browser manager |
+| Avoids context switch by enabling in-app browsing | Perhaps some apps can overrule the default browser |
+| Avoids cookie information being shared between apps > vulnerabilities |  |
+
+### Request data from News company
+
+We could do a GDPR request via email to the news sources (e.g. sanoma or NLprofiel and using the cookies of the users to identify them) ...
+
+| Pro | Con |
+|-----|-----|
+| Easy for the user | Much work for the researcher |
+| Legal | Some companies might not want to comply |
+|  | Some companies may simply not have access to that data themselves (might not track in-app browsing) |
 
 ## Method comparison
 
 Evaluation of all options against criteria:
 
-| Criteria | VPN | Browser-based | Create own browser, e.g. via Chrome custom tabs | Request data from internet company via webpage (filled in for Google Takeout) | Request data from internet company via email |
+| Criteria | VPN | Browser-based | Create own browser | Request data from Browser/app company | Request data from News company |
 |-----|-----|-----|-----|-----| -----|
 | 1. Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
 | 2. Can track HTTPS and HTTP urls | Yes? | Yes | Yes | Yes | Yes |
@@ -169,7 +178,7 @@ Evaluation of all options against criteria:
 | 13. Small time investment and simple to setup for participant | ? |  Yes | ? | Yes | Yes |
 | 14. Good overview of what information is being shared | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
 | 15. No action required by participant in daily life situation | Yes | Yes | Must use our browser | Yes | Yes |
-| 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Yes, assuming it only collects browsing behavior | Yes | Yes |
+| 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Yes, assuming it only collects browsing behaviour | Yes | Yes |
 
 
 ## Discussion
