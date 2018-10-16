@@ -2,17 +2,20 @@
 
 | Abstract |
 |----------|
-| This whitepaper explores what technologies are available for monitoring (mobile) news consumption and to what extend they meet certain requirements. |
+| This whitepaper explores what technologies are available for monitoring mobile news consumption and to what extend they meet certain requirements. |
 
 | Keywords |
 |----------|
-| Traffic interception, traffic analysis, online tracking, network monitoring, network forensics, sniffers. |
+| News consumption, traffic interception, traffic analysis, online tracking, network monitoring, network forensics, sniffers. |
 
 | Table of Contents |
 |-------------------|
 | [Introduction](#introduction) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Related Work](#related-work) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Criteria](#criteria) |
+| [Theoretical Background](#theoretical-background) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Internet Traffic and Security](#internet-traffic-and-security) |
+| &nbsp;&nbsp;&nbsp;&nbsp;[Legality and GDPR](#legality-and-gdpr) |
 | [Tracking Options](#tracking-options) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[VPN](#vpn) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Browser Based with Mobile Sync](#browser-based-with-mobile-sync) |
@@ -28,11 +31,11 @@ The news we read online may influence our opinions and beliefs. However, little 
 
 To study this effect, reliable news consumption data is needed. Most research so far focuses on self-reported survey data and on tracking desktop activity (_insert references_). However, news consumption via mobile devices is expected to be ever more important (_insert references_).
 
-To collect data about mobile news consumption, a couple of important criteria need to be taken into account. These will be discussed in the [Criteria](#criteria) section. Based on our criteria, we will explore what technologies are available for monitoring mobile news consumption and to what extend these meet the requirements.
+To collect data about mobile news consumption, a couple of criteria need to be taken into account. These will be discussed in the [Criteria](#criteria) section. Subsequently, we will explore what technologies are available for monitoring mobile news consumption and to what extend these meet the requirements.
 
 ### Related Work
 
-Previous study that explored technologies for news consumption looked at... (_to be completed_)
+Previous studies that explored technologies for news consumption looked at ... (_to be completed_).
 
 ### Criteria
 
@@ -49,12 +52,12 @@ This section lists several criteria by which to judge technologies for monitorin
 
 **Legality and GDPR compliance:**
 
-It is important to remember that any approach can, in principle, be make GDPR compliant by using secure storage, filtering of data and obtaining explicit approval from the participant. The real question here is  whether the approach is GDPR compliant by default or easy to make compliant.
+It is important to remember that any approach can, in principle, be make GDPR compliant by using secure storage, filtering of data and obtaining explicit approval from the participant. The real question here is whether the approach is GDPR compliant by default or easy to make compliant.
 
-- No data storage without explicit permission from participant
-- Does not store contact information: telephone number or email address.
-- Does not store the social media account name.
-- Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address.
+- No data storage without explicit permission from participant *Laurens: what is meant with this?*
+- Does not store contact information: telephone number or email address. *Laurens: what is meant with this?*
+- Does not store the social media account name. *Laurens: what is meant with this?*
+- Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address. *Laurens: what is meant with this?*
 
 **Non-intrusiveness and scalability:**
 - Small time investment for researcher. (to do: define this more clearly)
@@ -63,11 +66,47 @@ It is important to remember that any approach can, in principle, be make GDPR co
 - Minimal action required by participant in daily life situation, e.g. we do not want the participant to have keep a diary of what news they consume.
 - No impact on normal use of phone/PC: e.g. we do not want apps that rapidly drain the phone battery.
 
-## Tracking Options
+## Theoretical Background
 
 *Note (Vincent): I think a general introduction about how internet traffic works would help, because this will provide a conceptual framework for the reader without expert knowledge in this area. For example, does our audience know what a proxy server is, what we mean by network interactions, what do we mean by illegal (national law? facebook rules? both?)*
 
-### VPN
+### Internet Traffic and Security
+
+http://www.theshulers.com/whitepapers/internet_whitepaper/:
+Because the Internet is a global network of computers each computer connected to the Internet must have a unique address. Internet addresses are in the form nnn.nnn.nnn.nnn where nnn must be a number from 0 - 255. This address is known as an IP address.
+the message must be translated from alphabetic text into electronic signals, transmitted over the Internet, then translated back into alphabetic text. How is this accomplished? Through the use of a protocol stack. The protocol stack used on the Internet is referred to as the TCP/IP protocol stack. TCP (Transmission Control Protocol) directs packets to a specific application on a computer using a port number. IP (Internet Protocol) directs packets to a specific computer using an IP address.
+After your packets traverse the phone network and your ISP's (Internet Service Provider) local equipment, they are routed onto the ISP's backbone. From here the packets will usually journey through several routers and over several backbones, dedicated lines, and other networks until they find their destination.
+When a packet arrives at a router, the router examines the IP address put there by the IP protocol layer on the originating computer. The router checks it's routing table. If the network containing the IP address is found, the packet is sent to that network. If the network containing the IP address is not found, then the router sends the packet on a default route, usually up the backbone hierarchy to the next router. Hopefully the next router will know where to send the packet. If it does not, again the packet is routed upwards until it reaches a NSP backbone. The routers connected to the NSP backbones hold the largest routing tables and here the packet will be routed to the correct backbone, where it will begin its journey 'downward' through smaller and smaller networks until it finds it's destination. 
+What if the you need to access a web server referred to as www.anothercomputer.com? How does your web browser know where on the Internet this computer lives? The answer to all these questions is the Domain Name Service or DNS. The DNS is a distributed database which keeps track of computer's names and their corresponding IP addresses on the Internet. If a DNS server does not contain the domain name requested by another computer, the DNS server re-directs the requesting computer to another DNS server.
+One of the most commonly used services on the Internet is the World Wide Web (WWW). The application protocol that makes the web work is Hypertext Transfer Protocol or HTTP. HTTP is the protocol that web browsers and web servers use to communicate with each other over the Internet. It is an application level protocol because it sits on top of the TCP layer in the protocol stack and is used by specific applications to talk to one another. In this case the applications are web browsers and web servers. 
+Most protocols are connection oriented. This means that the two computers communicating with each other keep the connection open over the Internet. HTTP does not however. Before an HTTP request can be made by a client, a new connection must be made to the server. 
+Another commonly used Internet service is electronic mail. E-mail uses an application level protocol called Simple Mail Transfer Protocol or SMTP.
+Ports can be thought of as separate channels on each computer. For example, you can surf the web while reading e-mail. This is because these two applications (the web browser and the mail client) used different port numbers. When a packet arrives at a computer and makes its way up the protocol stack, the TCP layer decides which application receives the packet based on a port number.
+TCP is reliable because for each packet received, an acknowledgement is sent to the sender to confirm the delivery. TCP also includes a checksum in it's header for error-checking the received data. 
+
+https://computer.howstuffworks.com/encryption.htm:
+A popular implementation of public-key encryption is the Secure Sockets Layer (SSL). Originally developed by Netscape, SSL is an Internet security protocol used by Internet browsers and Web servers to transmit sensitive information. SSL has become part of an overall security protocol known as Transport Layer Security (TLS).
+Once your browser requests a secure page and adds the "s" onto "http," the browser sends out the public key and the certificate, checking three things: 1) that the certificate comes from a trusted party; 2) that the certificate is currently valid; and 3) that the certificate has a relationship with the site from which it's coming.
+
+https://robertheaton.com/2014/03/27/how-does-https-actually-work/:
+Once the connection is established, both parties can use the agreed algorithm and keys to securely send messages to each other. The handshake begins with the client sending a ClientHello message. This contains all the information the server needs in order to connect to the client via SSL, including the various cipher suites and maximum SSL version that it supports. Now that contact has been established, the server has to prove its identity to the client. This is achieved using its SSL certificate, which is a very tiny bit like its passport. An SSL certificate contains various pieces of data, including the name of the owner, the property (eg. domain) it is attached to, the certificate's public key, the digital signature and information about the certificate's validity dates. The client checks that it either implicitly trusts the certificate, or that it is verified and trusted by one of several Certificate Authorities (CAs) that it also implicitly trusts. The encryption of the actual message data exchanged by the client and server will be done using a symmetric algorithm, the exact nature of which was already agreed during the Hello phase. A symmetric algorithm uses a single key for both encryption and decryption, in contrast to asymmetric algorithms that require a public/private key pair. Both parties need to agree on this single, symmetric key, a process that is accomplished securely using asymmetric encryption and the server's public/private keys.
+
+https://en.wikipedia.org/wiki/Server_Name_Indication:
+Server Name Indication (SNI) is an extension to the TLS computer networking protocol[1] by which a client indicates which hostname it is attempting to connect to at the start of the handshaking process. This allows a server to present multiple certificates on the same IP address and TCP port number and hence allows multiple secure (HTTPS) websites (or any other service over TLS) to be served by the same IP address without requiring all those sites to use the same certificate. It is the conceptual equivalent to HTTP/1.1 name-based virtual hosting, but for HTTPS. The desired hostname is not encrypted,[2] so an eavesdropper can see which site is being requested.
+
+https://blog.cloudflare.com/encrypted-sni/:
+The TLS Server Name Indication (SNI) extension, originally standardized back in 2003, lets servers host multiple TLS-enabled websites on the same set of IP addresses, by requiring clients to specify which site they want to connect to during the initial TLS handshake. Without SNI the server wouldn't know, for example, which certificate to serve to the client, or which configuration to apply to the connection.
+The client adds the SNI extension containing the hostname of the site it's connecting to to the ClientHello message. It sends the ClientHello to the server during the TLS handshake. Unfortunately the ClientHello message is sent unencrypted, due to the fact that client and server don't share an encryption key at that point.
+This means that an on-path observer (say, an ISP, coffee shop owner, or a firewall) can intercept the plaintext ClientHello message, and determine which website the client is trying to connect to. That allows the observer to track which sites a user is visiting.
+But with SNI encryption the client encrypts the SNI even though the rest of the ClientHello is sent in plaintext. 
+
+### Legality and GDPR
+
+_insert background_
+
+## Tracking Options
+
+### VPN Sniffers
 
 Sniffers are software meant to expose network interactions, including HTTP or HTTPS requests and responses [(Blog about sniffers)](https://stanfy.com/blog/monitor-mobile-app-traffic-with-sniffers/). They are originally meant for developers to debug their software. Well known applications for sniffing HTTP(S) traffic include [Fiddler](https://www.telerik.com/fiddler), [Charles Proxy](https://www.charlesproxy.com/documentation/proxying/ssl-proxying/), TCP Catcher and Burp Suite. Such apps set up a proxy server, to which the mobile device connects. The sniffer intercepts the HTTP requests and responses. In order to be able to see and manipulate HTTPS requests you need to perform a Man-in-the-Middle (MitM) attack. At the proxy, traffic is decrypted, stored and subsequently re-encrypted to be send to the mobile device. The downside of this option is that the mobile device will see that the signature on the encryption is different than that of the original encryption. To prevent the mobile device from raising an error, the proxy needs to sign the data with its own certificate, which needs to be registered on the mobile device. This requires installing a certificate. Even then, global certificate store on mobile untrusted by apps. To work around this, update the certificate in the Apps' APK. Easy, but illegal. Also, need to redistribute the modified APK, which is also not allowed under Facebooks license.
 
@@ -85,9 +124,10 @@ Sniffers are software meant to expose network interactions, including HTTP or HT
 
 | Pro | Con |
 |-----|-----|
-| Easy to set up with existing VPN Apps in the playstore + openVPN or so at server | https hides the url, only server name (ie. DNS records) available. |
+| Easy to set up with existing VPN Apps in the playstore + openVPN or so at server | Https hides the url, only server name (ie. DNS records) available. |
 | will get all traffic (Apps + browser) | All major websites and browsers consider this 'unsafe' and are starting to refuse visiting sites in http. |
-| catches all HTTP | |
+| catches all HTTP content | |
+| Possibly violates Terms of Service of some apps |  |
 
 ### Browser Based with Mobile Sync
 
@@ -96,7 +136,7 @@ Desktop browser plugins can be used to track browsing history (possible for both
 In-app browsing history needs to be included. This can be a problem:
  - [Include in-app browsing history in Chrome sync](https://android.stackexchange.com/questions/201204/include-in-app-browsing-history-in-chrome-sync)
 
-Then, in-app browsing needs to be switched off globally. This, too, can be a problem:
+A solutions would be to switch off in-app browsing globally. This, too, can be a problem:
  - [Disable all in-app browsing while keeping Chrome as default browser](https://android.stackexchange.com/questions/201150/disable-all-in-app-browsing-while-keeping-chrome-as-default-browser)
 
 Then, in-app browsing needs to be switched off for each app (Facebook: turn off in-app browsing => request browser history > possible in full FB app, not in FBlite > what happens after update? > disable automatic updates? > FB also has a Download your information option which includes advertisers_you've_interacted_with). This, again, can be a problem:
@@ -120,9 +160,9 @@ Extra research is needed to understand how this works when apps are updated over
 
 ### Request data from Browser/App company
 
-We could do a GDPR request by directly downloading data via special webpage (at Google this is [TakeOut](http://takeout.google.com) which gives URL + timestamp + deviceid). I verified that signing into Chrome on mobile and on Desktop (and enabling sync) gives the browser history on Google Takeout. It includes a client_id and a time_usec. In-app browser history is available in full chrome app, but does not sync.
+We could do a GDPR request by directly downloading data via special webpage (at Google this is [TakeOut](http://takeout.google.com) which gives URL + timestamp + deviceid). For Chrome mobile and on Desktop (by enabling sync), this gives the browser history on Google Takeout. It includes a client_id and a time_usec. In-app browser history is available in full chrome app, but does not sync.
 
-Note that this does not work for all internet companies: facebook / twitter do not allow analytics to happen on their website (except via their specific tools *Comment Vincent: Can we elaborate here?* ). How does this interact with our writing a plugin? *Comment Vincent: Can we elaborate here?*
+Note that this does not work for all internet companies: Facebook / twitter do not allow analytics to occur on their website (except via their specific tools *Comment Vincent: Can we elaborate here?* ). How does this interact with our writing a plugin? *Comment Vincent: Can we elaborate here?*
 
 Note, again, that Chrome Custom Tabs does not forward its browser history to Google Takeout. So, any app using Chrome Custom Tabs will bias our data collection, similar to the previous section.
 
@@ -130,8 +170,7 @@ Note, again, that Chrome Custom Tabs does not forward its browser history to Goo
 |-----|-----|
 | Easy procedure for the participant | Does not (always) include in-app browsing history |
 | Data can be collected over long periods of time | Requires participant to keep in-app browsing off (globally or for each app) |
-|  | App-updates might automatically bring in-app browsing back on |
-|  | Not always distinction between mobile and desktop browsing |
+| Distinction between mobile and desktop browsing (at least for Google Takeout) | App-updates might automatically bring in-app browsing back on |
 
 ### Create own mobile browser via "Custom Tabs"
 
@@ -139,7 +178,7 @@ Although many apps allow the user to specify whether or not to use in-app browsi
 
 One method to log in-app browsing is to create a forwarding app that presents itself as the default browser, logs the url and then opens a real browsing (such as Chrome, however: [Evaluation of using chrome custom tabs (blog post)](https://medium.com/@vardaansh1/use-chrome-custom-tabs-they-said-it-will-be-fun-they-said-b5fabe5daea3)) to render the webpage [Manager app suggestion](https://android.stackexchange.com/questions/145745/prevent-apps-opening-links-in-chrome-custom-tabs-i-e-open-in-default-browser-d).
 
-However, how would the researcher verify that  the user does not change the default browser. And can we be certain that some apps cannot overrule the default browser and choose their own favourite?
+However, how would the researcher verify that the user does not change the default browser. And can we be certain that some apps cannot overrule the default browser and choose their own favourite?
 
 | Pro | Con |
 |-----|-----|
@@ -164,22 +203,21 @@ Evaluation of all options against criteria:
 | Criteria | VPN | Browser-based | Create own browser | Request data from Browser/app company | Request data from News company |
 |-----|-----|-----|-----|-----| -----|
 | 1. Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
-| 2. Can track HTTPS and HTTP urls | Yes? | Yes | Yes | Yes | Yes |
-| 3. Deals with in-app browsing | Yes | No, this needs to be turned off in the other apps | No |  Yes, if configured | Not applicable |
+| 2. Can track HTTPS and HTTP urls | No | Yes | Yes | Yes | Yes |
+| 3. Deals with in-app browsing | Yes | No | Yes |  Not all browsers | Not applicable |
 | 4. Tracks only whitelisted sites | No | No | No | No | Yes |
-| 5. Can be build in less than two month project | Yes |  Yes | ? | Yes | Yes |
-| 6. Easy to maintain, despite evolutions in mobile phone and web technologies | ? | Yes | Yes? | Yes | Yes |
-| 7. Data can be collected over long periods of time (multiple months) | Yes | Yes, if participant does not delete their browser history | Yes | Yes | Unknown |
-| 8. No data storage without explicit permission from participant | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
+| 5. Can be build in less than two month project | Yes |  Yes | Probably not | Yes | Yes |
+| 6. Easy to maintain, despite evolutions in mobile phone and web technologies | Yes | Relatively easy | Relatively easy | Yes | Yes |
+| 7. Data can be collected over long periods of time (multiple months) | Yes | Yes | Yes | Yes | Possibly not |
+| 8. No data storage without explicit permission from participant | No | No | No | No | Yes |
 | 9. Does not store contact information: telephone number or email address. | Yes, unless it is part of an url? | Yes, unless it is part of an url? | Yes, unless it is part of an url? | No | Yes |
 | 10. Does not store the social media account name. | Yes, unless it is part of an url? | Yes, unless it is part of an url? | Yes, unless it is part of an url? | No | Yes |
-| 11. Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address. | No? | Yes? | Yes? | Yes, if data request is made correctly | Yes |
+| 11. Does not store information on the specific location of the participant | No? | Yes? | Yes? | Yes, if data request is made correctly | Yes |
 | 12. Small time investment for (social science) researcher | Yes | Yes | Yes | Yes | Yes |
 | 13. Small time investment and simple to setup for participant | ? |  Yes | ? | Yes | Yes |
 | 14. Good overview of what information is being shared | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
 | 15. No action required by participant in daily life situation | Yes | Yes | Must use our browser | Yes | Yes |
-| 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes? |  Yes | Yes, assuming it only collects browsing behaviour | Yes | Yes |
-
+| 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes | Yes | Yes, assuming it only collects and redirects | Yes | Yes |
 
 ## Discussion
 
