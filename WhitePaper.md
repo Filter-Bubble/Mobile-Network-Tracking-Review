@@ -22,7 +22,6 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;[Request data from Browser/App company](#request-data-from-browser-app-company) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Create own mobile browser via "Custom Tabs"](#create-own-mobile-browser-via-custom-tabs) |
 | &nbsp;&nbsp;&nbsp;&nbsp;[Request data from News company](#request-data-from-news-company) |
-| [Method comparison](#method-comparison) |
 | [Discussion](#discussion) |
 
 ## Introduction
@@ -54,13 +53,13 @@ This section lists several criteria by which to judge technologies for monitorin
 
 It is important to remember that any approach can, in principle, be make GDPR compliant by using secure storage, filtering of data and obtaining explicit approval from the participant. The real question here is whether the approach is GDPR compliant by default or easy to make compliant.
 
-- No data storage without explicit permission from participant *Laurens: what is meant with this?*
-- Does not store contact information: telephone number or email address. *Laurens: what is meant with this?*
-- Does not store the social media account name. *Laurens: what is meant with this?*
-- Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address. *Laurens: what is meant with this?*
+- No data storage without explicit permission from participant *(Comment by Laurens): what is meant with this?*
+- Does not store contact information: telephone number or email address. *(Comment by Laurens): what is meant with this?*
+- Does not store the social media account name. *(Comment by Laurens): what is meant with this?*
+- Does not store information on the specific location of the participant, e.g. ip address, GPS coordinates, or physical address. *(Comment by Laurens): what is meant with this?*
 
 **Non-intrusiveness and scalability:**
-- Small time investment for researcher. (to do: define this more clearly)
+- Small time investment for researcher. (_to do: define this more clearly_)
 - Small time investment and simple to setup for participant.
 - Good overview to participant of what information is being shared.
 - Minimal action required by participant in daily life situation, e.g. we do not want the participant to have keep a diary of what news they consume.
@@ -68,7 +67,7 @@ It is important to remember that any approach can, in principle, be make GDPR co
 
 ## Theoretical Background
 
-*Note (Vincent): I think a general introduction about how internet traffic works would help, because this will provide a conceptual framework for the reader without expert knowledge in this area. For example, does our audience know what a proxy server is, what we mean by network interactions, what do we mean by illegal (national law? facebook rules? both?)*
+*(Comment by Vincent): I think a general introduction about how internet traffic works would help, because this will provide a conceptual framework for the reader without expert knowledge in this area. For example, does our audience know what a proxy server is, what we mean by network interactions, what do we mean by illegal (national law? facebook rules? both?)*
 
 ### Internet Traffic and Security
 
@@ -146,7 +145,7 @@ Extra research is needed to understand how this works when apps are updated over
 
 We could do a GDPR request by directly downloading data via special webpage (at Google this is [TakeOut](http://takeout.google.com) which gives URL + timestamp + deviceid). For Chrome mobile and on Desktop (by enabling sync), this gives the browser history on Google Takeout. It includes a client_id and a time_usec. In-app browser history is available in full chrome app, but does not sync.
 
-Note that this does not work for all internet companies: Facebook / twitter do not allow analytics to occur on their website (except via their specific tools *Comment Vincent: Can we elaborate here?* ). How does this interact with our writing a plugin? *Comment Vincent: Can we elaborate here?*
+Note that this does not work for all internet companies: Facebook / twitter do not allow analytics to occur on their website (except via their specific tools *(Comment by Vincent): Can we elaborate here?* ). How does this interact with our writing a plugin? *(Comment by Vincent): Can we elaborate here?*
 
 Note, again, that Chrome Custom Tabs does not forward its browser history to Google Takeout. So, any app using Chrome Custom Tabs will bias our data collection, similar to the previous section.
 
@@ -180,11 +179,11 @@ We could do a GDPR request via email to the news sources (e.g. sanoma or NLprofi
 | Legal | Some companies might not want to comply |
 |  | Some companies may simply not have access to that data themselves (might not track in-app browsing) |
 
-## Method comparison
+## Discussion
 
 Evaluation of all options against criteria:
 
-| Criteria | VPN | Browser-based | Create own browser | Request data from Browser/app company | Request data from News company |
+| Criterium | VPN | Browser-based | Create own browser | Request data from Browser/app company | Request data from News company |
 |-----|-----|-----|-----|-----| -----|
 | 1. Collects mobile browsing data | Yes | Yes | Yes | Yes | Yes |
 | 2. Can track HTTPS and HTTP urls | No | Yes | Yes | Yes | Yes |
@@ -198,15 +197,13 @@ Evaluation of all options against criteria:
 | 10. Does not store the social media account name. | Yes, unless it is part of an url? | Yes, unless it is part of an url? | Yes, unless it is part of an url? | No | Yes |
 | 11. Does not store information on the specific location of the participant | No? | Yes? | Yes? | Yes, if data request is made correctly | Yes |
 | 12. Small time investment for (social science) researcher | Yes | Yes | Yes | Yes | Yes |
-| 13. Small time investment and simple to setup for participant | ? |  Yes | ? | Yes | Yes |
-| 14. Good overview of what information is being shared | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | No, we would have to facilitate that | Yes |
-| 15. No action required by participant in daily life situation | Yes | Yes | Must use our browser | Yes | Yes |
+| 13. Small time investment and simple to setup for participant | No | No | No | Yes | Yes |
+| 14. Participant overview of what information they share | No | No | No | Yes, possibly | Yes |
+| 15. No action required by participant in daily life situation | Yes | Yes | Yes | No | Yes |
 | 16. No impact on normal use of phone/PC: e.g. no apps that drain the battery. | Yes | Yes | Yes, assuming it only collects and redirects | Yes | Yes |
-
-## Discussion
 
 To do:
 - More research needed on the effect of Chrome custom tabs used by other phone apps. How does this affect the output from Browser-based monitoring and Google Takeout?
 - More research needed on the specific requirements we can derive from GDPR?
 - More research needed on pros and cons of GDPR-based data requests via email.
-- The criteria on maintainability and time needed to build it need critical attention from someone with more experience in this than me (Vincent).
+- The criteria on maintainability and time needed to build it need critical attention from someone with more experience in this than me *(Comment by Vincent)*.
