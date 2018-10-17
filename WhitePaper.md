@@ -121,7 +121,8 @@ In-app browsing history needs to be included. This can be a problem:
 
 A solutions would be to switch off in-app browsing globally. This can be a problem for Google Chrome:
  - [Disable all in-app browsing while keeping Chrome as default browser](https://android.stackexchange.com/questions/201150/disable-all-in-app-browsing-while-keeping-chrome-as-default-browser)
-It is not a problem for Firefox. Uninstalling Chrome will disable all in-app browsing and Firefox Sync can be used to track mobile browsing activity via desktop.
+
+Luckily, this is not a problem for Firefox. Uninstalling Chrome will disable all in-app browsing and Firefox Sync can be used to track mobile browsing activity via desktop. Unlike Chrome, however, Firefox dos not distinguish between mobile and desktop history.
 
 Then, in-app browsing needs to be switched off for each app (Facebook: turn off in-app browsing => request browser history > possible in full FB app, not in FBlite > what happens after update? > disable automatic updates? > FB also has a Download your information option which includes advertisers_you've_interacted_with). This, again, can be a problem:
  - [Disable in-app browsing on the Facebook Lite app](https://android.stackexchange.com/questions/201210/how-can-in-app-browsing-be-disabled-on-the-facebook-lite-app)
@@ -138,8 +139,8 @@ Extra research is needed to understand how this works when apps are updated over
 | Pro | Con |
 |-----|-----|
 | Uses existing browser technology | Does not (always) include in-app browsing history |
-| Works with all browsers | Requires participant to log into desktop regularly to sync |
-|  | Requires participant to keep in-app browsing off (globally or for each app) |
+| Works with all browsers | Requires participants to log into desktop regularly to sync |
+|  | Requires participants to keep in-app browsing off (globally or for each app) |
 |  | App-updates might automatically bring in-app browsing back on |
 |  | Not always distinction between mobile and desktop browsing |
 
