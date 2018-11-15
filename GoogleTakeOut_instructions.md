@@ -5,6 +5,7 @@ Start of study period (wave 1):
 2. Turn off in-app browsing:
   - Facebook ([Android instructions](https://www.technologyhint.com/disable-facebook-in-app-browser/))...
   - Twitter...
+3. Turn off automatic deletion of browser history after X weeks/days.
 
 End of study period (wave 2):
 1. Go to https://takeout.google.com/
