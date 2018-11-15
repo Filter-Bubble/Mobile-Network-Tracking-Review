@@ -1,12 +1,12 @@
 # Instructions to effectively use Google Takeout
 
-Pre-requisites:
-- If you have multiple google accounts you use frequently (> 1 per month) then follow this procedure for all your google accounts.
-- If you do not have a google account, please create one.
-- If you have multiple phones, please make sure you follow this procedure for each phone.
+### Pre-requisites:
+* If you have multiple google accounts you use frequently (> 1 per month) then follow this procedure for all your google accounts.
+* If you do not have a google account, please create one.
+* If you have multiple phones, please make sure you follow this procedure for each phone.
 
 
-Start of study period (wave 1):
+### Start of study period (wave 1):
 
 1. Go to [Google MyActivity](https://myaccount.google.com/activitycontrols) and verify that "Web & App Activity" is enabled
 2. Use Chrome as the default browser for both Desktop and Mobile
@@ -19,10 +19,10 @@ Start of study period (wave 1):
    * To do 2: Check whether iOS devices are synced by default.
 6. Turn off automatic deletion of browser history after X weeks/days.
 
-To do: It would be good to have a quick check that it all works. In this early phase the experiment itself is the check, but in the real study/survey it may be good to think about intermediate checkpoints (if possible).
+### Intermediate check?
+To do: It would be good to have a quick check that it all works. In this early phase the experiment itself is the check, but in the real study/survey it may be good to think about ways to check that data collection is going as planned.
 
-
-End of study period (wave 2):
+### End of study period (wave 2):
 
 1. Go to [Google Takeout](https://takeout.google.com/)
 2. Click "Select None"
