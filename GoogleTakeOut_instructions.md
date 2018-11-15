@@ -1,15 +1,28 @@
-# Instructions to effectively use google takeout
+# Instructions to effectively use Google Takeout
 
 Start of study period (wave 1):
-1. Turn on sync in Chrome: [link to blog post explaining how](https://www.techrepublic.com/article/how-to-manage-cross-device-syncing-in-chrome/).
-2. Turn off in-app browsing:
-  - Facebook ([Android instructions](https://www.technologyhint.com/disable-facebook-in-app-browser/))...
-  - Twitter...
-3. Turn off automatic deletion of browser history after X weeks/days.
+
+1. Go to [Google MyActivity](https://myaccount.google.com/activitycontrols) and verify that "Web & App Activity" is enabled
+2. Use Chrome as the default browser for both Desktop and Mobile
+3. Log into your Google Account on both mobile and desktop
+4. Turn on sync in Chrome: [link to blog post explaining how](https://www.techrepublic.com/article/how-to-manage-cross-device-syncing-in-chrome/).
+5. Turn off in-app browsing:
+   * Facebook ([Android instructions](https://www.technologyhint.com/disable-facebook-in-app-browser/))...
+   * Twitter...
+6. Turn off automatic deletion of browser history after X weeks/days.
+
 
 End of study period (wave 2):
-1. Go to https://takeout.google.com/
-2. Unselect all, by clicking "Select None"
-3. Select Chrome
-4. Click next
-5. Select .zip, 50GB, and your prefered way of receiving the archive.
+
+1. Go to [Google Takeout](https://takeout.google.com/)
+2. Click "Select None"
+3. Select "Chrome"
+4. Click "Next" (scroll down)
+5. Verify the settings are:
+   * File type: Zip files
+   * Archive size (max): 50GB
+   * Delivery method: Send download link via email
+6. Click "Create Archive"
+7. Wait until archive is created (may take hours)
+8. Go to [Google Takeout Archives](https://takeout.google.com/settings/takeout/downloads)
+9. Download latest archive zip
