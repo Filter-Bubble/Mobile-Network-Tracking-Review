@@ -18,32 +18,38 @@
    * To do 2: Check whether iOS devices are synced by default.
 6. Turn off automatic deletion of browser history after X weeks/days.
 
-### Intermediate check?
-To do: It would be good to have a quick check that it all works. In this early phase the experiment itself is the check, but in the real study/survey it may be good to think about ways to check that data collection is going as planned.
+### Intermediate quality check at some point between wave 1 and wave 2:
+
+Before proceeding with the actual take out:
+
+7. Use a desktop browser to go to https://www.nederlandwereldwijd.nl/landen/madagaskar/over-ons/honorair-consulaat-in-antananarivo. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
+8. Use your mobile phone to go to https://www.nederlandwereldwijd.nl/landen/rusland/over-ons/ambassade-moskou. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
+9. E-mail yourself the following url without opening it: https://www.netherlandsworldwide.nl/countries/oman/about-us/embassy-of-the-kingdom-of-the-netherlands-in-muscat. Next, open the e-mail sent to yourself in your mobile phone via your email app (e.g. gmail or outlook) and click on the link to open it. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
+10. If you are a facebook user, copy paste the following url in a message to a friend and send it: https://www.nederlandwereldwijd.nl/landen/sri-lanka/over-ons/nederlandse-ambassade-in-colombo. Next, open the message to your friend in your mobile phone via your phone's Facebook app. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
+11. Before doing the take out, make sure you collect data for at least a couple of weeks.
 
 ### End of study period (wave 2):
 
-1. Go to [Google Takeout](https://takeout.google.com/)
-2. Click "Select None"
-3. Select "Chrome"
-4. Click "Next" (scroll down)
-5. Verify the settings are:
+12. Go to [Google Takeout](https://takeout.google.com/)
+13. Click "Select None"
+14. Select "Chrome"
+15. Click "Next" (scroll down)
+16. Verify the settings are:
    * File type: Zip files
    * Archive size (max): 50GB
    * Delivery method: Send download link via email
-6. Click "Create Archive"
-7. Wait until archive is created (may take hours)
-8. Go to [Google Takeout Archives](https://takeout.google.com/settings/takeout/downloads)
-9. Download latest archive zip
+17. Click "Create Archive"
+18. Wait until archive is created (may take hours)
+19. Go to [Google Takeout Archives](https://takeout.google.com/settings/takeout/downloads)
+20. Download latest archive zip
+21. Unzipping the zip-file.
 
+### Copy paste the text bellow to [this](https://github.com/Filter-Bubble/Mobile-Network-Tracking-Review/issues/1) issue in the respository and answer each questions.
 
-### Suggestions for evaluating the data collection yourself:
-
-1. Before doing the take out, use your mobile phone to go to a website where you would otherwise never go to, make sure you never visit this website with your desktop browser. For example, this website from the Dutch embassy in Moscow. https://www.nederlandwereldwijd.nl/landen/rusland/over-ons/ambassade-moskou.
-2. Before doing the take out, e-mail yourself the following url without opening it: https://www.netherlandsworldwide.nl/countries/oman/about-us/embassy-of-the-kingdom-of-the-netherlands-in-muscat. Next, open the e-mail sent to yourself in your mobile phone and click on the link.
-3. Before doing the take out, make sure you collect data for at least a couple of weeks. 
-
-After doing the takeout, and unzipping the zip-file:
-- Can check whether this websites from 1. and 2, are captured by google take out?
-- Does google take out store your browsing behavior for the entire study period as expected?
-- Does the google take out collect any information you did not expect?
+22. Did you encounter any problems following the instructions above? (yes/no)
+23. If yes, please list the problems you encounter: (open question)
+24. Did google takeout capture the website from item 7? (yes/no)
+25. Did google takeout capture the website from item 8? (yes/no)
+26. Did google takeout capture the website from item 9? (yes/no)
+27. Did the google history duration matches what you expect it to be? (yes/no)
+28. What is your phone brand? (Apple/HTC/Samsung/...)
