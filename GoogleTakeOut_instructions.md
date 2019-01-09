@@ -1,11 +1,11 @@
 # Instructions to effectively use Google Takeout
 
-### Pre-requisites:
+## Pre-requisites:
 * If you have multiple google accounts you use frequently (> 1 per month) then follow this procedure for all your google accounts.
 * If you do not have a google account, please create one.
 * If you have multiple phones, please make sure you follow this procedure for each phone.
 
-### Start of study period (wave 1):
+## Start of study period (wave 1):
 
 1. Go to [Google MyActivity](https://myaccount.google.com/activitycontrols) and verify that "Web & App Activity" is enabled
 2. Use Chrome as the default browser for both Desktop and Mobile
@@ -18,7 +18,7 @@
    * To do 2: Check whether iOS devices are synced by default.
 6. Turn off automatic deletion of browser history after X weeks/days.
 
-### Intermediate quality check at some point between wave 1 and wave 2:
+## Intermediate quality check at some point between wave 1 and wave 2:
 
 Before proceeding with the actual take out do the following:
 
@@ -30,7 +30,7 @@ Before proceeding with the actual take out do the following:
 10. If you are a facebook user, copy paste the following url in a message to a friend and send it: https://www.nederlandwereldwijd.nl/landen/sri-lanka/over-ons/nederlandse-ambassade-in-colombo. Next, open the message to your friend in your mobile phone via your phone's Facebook app. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
 11. Before doing the take out, make sure you collect data for at least a couple of weeks.
 
-### End of study period (wave 2):
+## End of study period (wave 2):
 
 12. Go to [Google Takeout](https://takeout.google.com/)
 13. Click "Select None"
@@ -46,7 +46,7 @@ Before proceeding with the actual take out do the following:
 20. Download latest archive zip
 21. Unzipping the zip-file.
 
-### Form to test the data collection yourself
+## Form to test the data collection yourself
 
 Copy paste the text bellow to [this](https://github.com/Filter-Bubble/Mobile-Network-Tracking-Review/issues/1) issue in the respository and answer each questions.
 
