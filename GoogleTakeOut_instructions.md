@@ -18,7 +18,7 @@
    * To do 2: Check whether iOS devices are synced by default.
 6. Turn off automatic deletion of browser history after X weeks/days.
 
-## Intermediate quality check at some point between wave 1 and wave 2:
+## Intermediate tasks to facilitate checking the quality of the takeout:
 
 Before proceeding with the actual take out do the following:
 
