@@ -44,12 +44,16 @@ Before proceeding with the actual take out:
 20. Download latest archive zip
 21. Unzipping the zip-file.
 
-### Copy paste the text bellow to [this](https://github.com/Filter-Bubble/Mobile-Network-Tracking-Review/issues/1) issue in the respository and answer each questions.
+### Form to test the data collection yourself
 
-22. Did you encounter any problems following the instructions above? (yes/no)
-23. If yes, please list the problems you encounter: (open question)
-24. Did google takeout capture the website from item 7? (yes/no)
-25. Did google takeout capture the website from item 8? (yes/no)
-26. Did google takeout capture the website from item 9? (yes/no)
-27. Did the google history duration matches what you expect it to be? (yes/no)
-28. What is your phone brand? (Apple/HTC/Samsung/...)
+Copy paste the text bellow to [this](https://github.com/Filter-Bubble/Mobile-Network-Tracking-Review/issues/1) issue in the respository and answer each questions.
+
+- Did you encounter any problems following the instructions above? (yes/no)
+- If yes, please list the problems you encounter: (open question)
+- Did google takeout capture the website from item 7? (yes/no)
+- Did google takeout capture the website from item 8? (yes/no)
+- Did google takeout capture the website from item 9? (yes/no)
+- Did google takeout capture the website from item 10? (yes/no)
+- Did the google history duration matches what you expect it to be? (yes/no)
+- What is the mobile phone brand you used? (Apple/HTC/Samsung/...)
+- What is the operating system of the desktop computer you used? (Windows/iOS/Linux)
