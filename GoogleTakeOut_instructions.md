@@ -24,8 +24,8 @@ Before proceeding with the actual take out do the following:
 
 #### *Do not click on the urls below before reading the instructions carefully!*
 
-7. Use a desktop browser to go to https://www.nederlandwereldwijd.nl/landen/madagaskar/over-ons/honorair-consulaat-in-antananarivo. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
-8. Use your mobile phone to go to https://www.nederlandwereldwijd.nl/landen/rusland/over-ons/ambassade-moskou. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
+7. Use a **desktop browser** to go to https://www.nederlandwereldwijd.nl/landen/madagaskar/over-ons/honorair-consulaat-in-antananarivo. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
+8. Use your **mobile phone** to go to https://www.nederlandwereldwijd.nl/landen/rusland/over-ons/ambassade-moskou. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
 9. E-mail yourself the following url without opening it: https://www.netherlandsworldwide.nl/countries/oman/about-us/embassy-of-the-kingdom-of-the-netherlands-in-muscat. Next, open the e-mail sent to yourself in your mobile phone via your email app (e.g. gmail or outlook) and click on the link to open it. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
 10. If you are a facebook user, copy paste the following url in a message to a friend and send it: https://www.nederlandwereldwijd.nl/landen/sri-lanka/over-ons/nederlandse-ambassade-in-colombo. Next, open the message to your friend in your mobile phone via your phone's Facebook app. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
 11. Before doing the take out, make sure you collect data for at least a couple of weeks.
