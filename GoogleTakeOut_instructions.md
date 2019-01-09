@@ -20,7 +20,9 @@
 
 ### Intermediate quality check at some point between wave 1 and wave 2:
 
-Before proceeding with the actual take out:
+Before proceeding with the actual take out do the following:
+
+#### *Do not click on the urls below before reading the instructions carefully!*
 
 7. Use a desktop browser to go to https://www.nederlandwereldwijd.nl/landen/madagaskar/over-ons/honorair-consulaat-in-antananarivo. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
 8. Use your mobile phone to go to https://www.nederlandwereldwijd.nl/landen/rusland/over-ons/ambassade-moskou. Make sure you do not visit this website with any other device during the study period as that would invalidate the experiment.
