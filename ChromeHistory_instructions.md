@@ -17,7 +17,7 @@
 
 ## Intermediate tasks to facilitate checking the quality of the takeout:
 
-Before proceeding with the actual take out do the following:
+Before proceeding with the actual take out do the following:chrome
 
 #### *Do not click on the urls below before reading the instructions carefully!*
 
@@ -29,7 +29,7 @@ Before proceeding with the actual take out do the following:
 
 ## End of study period (wave 2):
 
-12. Go to [Your Chrome History](chrome://history/) (if it doesn't open type this into your chrome browser: chrome://history/)
+12. Go to your chrome history by typing this into your browser: chrome://history/
 13. Use the search function and scrolling down to answer the questions below (in the Google Form)
 
 ## Form to test the data collection yourself
